@@ -30,7 +30,7 @@ public class MenuScreen extends Menus
     {
         BtnInfo btnInfo = new BtnInfo();
         addObject(btnInfo,46,43);
-        
+
         BtnPlay btnPlay = new BtnPlay();
         addObject(btnPlay,400,370);
     }

@@ -14,7 +14,8 @@ public class Level1 extends Levels
      * 
      */
     static GreenfootSound level1Sound = new GreenfootSound("level1.wav");
-
+    public static Counter score = new Counter("Score: ");
+    public static Counter life = new Counter("Life : ");
     public Level1()
     {
         level1Sound.playLoop();
@@ -35,8 +36,12 @@ public class Level1 extends Levels
 
         Chimera chimera = new Chimera();
         addObject(chimera,30,179);
-        
+
         Ogre ogre2 = new Ogre();
         addObject(ogre2,664,525);
+        score.setValue(0);
+        addObject(score,50,18);
+        life.setValue(5);
+        addObject(life,744,19);
     }
 }

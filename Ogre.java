@@ -27,6 +27,7 @@ public class Ogre extends Actor
         {
             Greenfoot.playSound("kena.wav");            
             removeTouching(Panah.class);
+            Level1.score.add(1);
             getWorld().addObject(new Ogre(), 800, 522);
             getWorld().removeObject(this);
         }

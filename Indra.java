@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -17,6 +18,7 @@ public class Indra extends Actor
     private final int gravity = 1;
     private int valacity;
     private int delay = 0;
+    public int totalKenaHit = 0;
     public Indra()
     {
         valacity = 0;
@@ -27,6 +29,9 @@ public class Indra extends Actor
         setImage( indra.getCurrentImage() );
         fall();
         checkKey();
+        kenaHit();
+        checkScore();
+        
     }    
     
     public void checkKey()
@@ -79,5 +84,38 @@ public class Indra extends Actor
     public void countDelay()
     {
         delay++;
+    }
+    
+    public void checkScore()  
+    {  
+        if(totalKenaHit == 5)   
+         {  
+           setImage("indra mati.jpeg");
+           Level1.life.setValue(0);     
+           Greenfoot.delay(5000);  
+           Greenfoot.setWorld(new MenuScreen());  
+         }  
+    }
+    
+    public void kenaHit()
+    {
+        if(isTouching(Ogre.class))
+        {
+           World world;  
+           world = getWorld();  
+           Greenfoot.playSound("kena.wav");            
+           removeTouching(Ogre.class);
+           Level1.life.add(-1);
+           getWorld().addObject(new Ogre(), 800, 522);
+        }
+        
+        if(isTouching(ApiChimera.class))
+        {
+           Greenfoot.playSound("kena.wav");            
+           removeTouching(ApiChimera.class);
+           Level1.life.add(-1);
+           getWorld().addObject(new ApiChimera(), 800, 522);
+        }
+        
     }
 }

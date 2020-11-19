@@ -34,6 +34,7 @@ public class Chimera extends Actor
         {
             Greenfoot.playSound("kena.wav");            
             removeTouching(Panah.class);
+            Level1.score.add(3);
             getWorld().addObject(new Chimera(),30,179);
             getWorld().removeObject(this); 
         }
