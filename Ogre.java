@@ -25,11 +25,23 @@ public class Ogre extends Actor
         
         if(isTouching(Panah.class))
         {
+            if(Indra.minibos1() == 0)
+            {
             Greenfoot.playSound("kena.wav");            
             removeTouching(Panah.class);
             Level1.score.add(1);
             getWorld().addObject(new Ogre(), 800, 522);
             getWorld().removeObject(this);
+            }
+            
+            if(Indra.minibos1() == 1)
+            {
+            Greenfoot.playSound("kena.wav");            
+            removeTouching(Panah.class);
+            Level1.score.add(1);
+            getWorld().removeObject(this);
+            Indra.musuh += 1;
+            }
         }
     }    
 }

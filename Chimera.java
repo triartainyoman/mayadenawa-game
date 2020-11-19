@@ -32,11 +32,24 @@ public class Chimera extends Actor
         }
         if(isTouching(Panah.class))
         {
+            if(Indra.minibos1() == 0)
+            {
             Greenfoot.playSound("kena.wav");            
             removeTouching(Panah.class);
             Level1.score.add(3);
             getWorld().addObject(new Chimera(),30,179);
-            getWorld().removeObject(this); 
+            //getWorld().addObject(new Chimera(),Greenfoot.getRandomNumber(getWorld().getWidth()),179);
+            getWorld().removeObject(this);    
+            }
+            
+            if(Indra.minibos1() == 1)
+            {
+                Greenfoot.playSound("kena.wav");            
+            removeTouching(Panah.class);
+            Level1.score.add(3);
+            getWorld().removeObject(this);
+            Indra.musuh += 1;
+            }
         }
     }    
         

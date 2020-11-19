@@ -39,8 +39,10 @@ public class Level1 extends Levels
 
         Ogre ogre2 = new Ogre();
         addObject(ogre2,664,525);
+        
         score.setValue(0);
         addObject(score,50,18);
+        
         life.setValue(5);
         addObject(life,744,19);
     }

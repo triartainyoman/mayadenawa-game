@@ -19,6 +19,13 @@ public class Indra extends Actor
     private int valacity;
     private int delay = 0;
     public int totalKenaHit = 0;
+    public static int statusMinibos1 = 0;
+    public static int musuh = 0;
+    public static int winLevel1 = 0;
+    public static int minibos1()
+    {
+        return statusMinibos1;
+    }
     public Indra()
     {
         valacity = 0;
@@ -31,7 +38,10 @@ public class Indra extends Actor
         checkKey();
         kenaHit();
         checkScore();
-        
+        if(winLevel1 == 1)
+        {
+            getWorld().addObject(new Life(), 664, 545);
+        }
     }    
     
     public void checkKey()
@@ -88,12 +98,24 @@ public class Indra extends Actor
     
     public void checkScore()  
     {  
-        if(totalKenaHit == 5)   
+        if(Level1.score.getValue() >= 5 )
+        {
+            statusMinibos1 = 1;
+            if(musuh == 3)
+            {
+            getWorld().addObject(new MiniBos(), 664, 522);
+            Level1.score.add(1);
+            musuh += 1;
+            //Greenfoot.addObject()
+            }
+        }
+        
+        if(Level1.life.getValue() <= 0)   
          {  
-           setImage("indra mati.jpeg");
+           setImage("lose.png");
            Level1.life.setValue(0);     
-           Greenfoot.delay(5000);  
-           Greenfoot.setWorld(new MenuScreen());  
+           Greenfoot.delay(100);  
+           Greenfoot.setWorld(new GameOver());  
          }  
     }
     
@@ -127,5 +149,11 @@ public class Indra extends Actor
            getWorld().addObject(new ApiChimera(), 800, 522);
         }
         
+        if(isTouching(ApiMinibos.class))
+        {
+           Greenfoot.playSound("kena.wav");            
+           removeTouching(ApiMinibos.class);
+           Level1.life.add(-1);
+        }
     }
 }

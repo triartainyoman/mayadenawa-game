@@ -1,20 +1,26 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BtnInfo here.
+ * Write a description of class Life here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BtnInfo extends Buttons
+public class Life extends Actor
 {
     /**
-     * Act - do whatever the BtnInfo wants to do. This method is called whenever
+     * Act - do whatever the Life wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
         // Add your action code here.
-        
+        if(Levels.level == 1)
+        {
+            if(isTouching(Indra.class))
+            {
+                Greenfoot.setWorld(new Level2());
+            }
+        }
     }    
 }
