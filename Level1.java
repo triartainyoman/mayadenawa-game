@@ -35,6 +35,7 @@ public class Level1 extends Levels
 
         Chimera chimera = new Chimera();
         addObject(chimera,30,179);
+        
         Ogre ogre2 = new Ogre();
         addObject(ogre2,664,525);
     }

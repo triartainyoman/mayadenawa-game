@@ -20,11 +20,12 @@ public class Ogre extends Actor
         setLocation(getX() - 1, getY()); 
         if(isAtEdge())
         {
-            setLocation(800, 522);
+            setLocation(800, 522); 
         }
         
         if(isTouching(Panah.class))
         {
+            Greenfoot.playSound("kena.wav");            
             removeTouching(Panah.class);
             getWorld().addObject(new Ogre(), 800, 522);
             getWorld().removeObject(this);

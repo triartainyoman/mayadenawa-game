@@ -15,12 +15,28 @@ public class Chimera extends Actor
     GifImage chimera = new GifImage("chimeraKanan.gif");
     GifImage chimera2 = new GifImage("chimeraKiri.gif");
     int chimeraKanan = 1;
-        
+    
+    private int delay = 0;
     public void act() 
     {
         // Add your action code here.
         setImage( chimera.getCurrentImage() );
         checkChimera();
+        countDelay();
+        
+        if(delay == 50)
+        {
+            getWorld().addObject(new ApiChimera(), getX(), getY());
+            Greenfoot.playSound("api.wav");
+            delay = 0;
+        }
+        if(isTouching(Panah.class))
+        {
+            Greenfoot.playSound("kena.wav");            
+            removeTouching(Panah.class);
+            getWorld().addObject(new Chimera(),30,179);
+            getWorld().removeObject(this); 
+        }
     }    
         
     public void checkChimera()
@@ -44,5 +60,10 @@ public class Chimera extends Actor
             }
         }
        
+    }
+    
+    public void countDelay()
+    {
+        delay++;
     }
 }

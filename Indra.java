@@ -16,7 +16,7 @@ public class Indra extends Actor
     
     private final int gravity = 1;
     private int valacity;
-    int delay = 0;
+    private int delay = 0;
     public Indra()
     {
         valacity = 0;
