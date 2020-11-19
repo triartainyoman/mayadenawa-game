@@ -109,6 +109,16 @@ public class Indra extends Actor
            getWorld().addObject(new Ogre(), 800, 522);
         }
         
+        if(isTouching(Chimera.class))
+        {
+           World world;  
+           world = getWorld();  
+           Greenfoot.playSound("kena.wav");            
+           removeTouching(Chimera.class);
+           Level1.life.add(-1);
+           getWorld().addObject(new Chimera(), 30,179);
+        }
+        
         if(isTouching(ApiChimera.class))
         {
            Greenfoot.playSound("kena.wav");            
