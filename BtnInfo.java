@@ -14,5 +14,5 @@ public class BtnInfo extends Buttons
             Greenfoot.setWorld(new InfoScreen());
             Greenfoot.playSound("klik.wav");
         }
-    }    
+    }     
 }

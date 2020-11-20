@@ -22,6 +22,12 @@ public class BtnNext extends Buttons
             {
                 Greenfoot.setWorld(new Level1());
             }
+            
+            if(Levels.level == 2)
+            {
+                Greenfoot.setWorld(new Level2());
+                Levels.win = 1;
+            }
         }
     }    
 }

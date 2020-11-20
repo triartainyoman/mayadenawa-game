@@ -20,8 +20,10 @@ public class Indra extends Actor
     private int delay = 0;
     public int totalKenaHit = 0;
     public static int statusMinibos1 = 0;
+    public static int statusMinibos2 = 0;
     public static int musuh = 0;
     public static int winLevel1 = 0;
+    public static int winLevel2 = 0;
     public static int minibos1()
     {
         return statusMinibos1;
@@ -39,6 +41,11 @@ public class Indra extends Actor
         kenaHit();
         checkScore();
         if(winLevel1 == 1)
+        {
+            getWorld().addObject(new Life(), 664, 545);
+        }
+        
+        if(winLevel2 == 1)
         {
             getWorld().addObject(new Life(), 664, 545);
         }
@@ -98,7 +105,7 @@ public class Indra extends Actor
     
     public void checkScore()  
     {  
-        if(Level1.score.getValue() >= 5 )
+        if(Level1.score.getValue() >= 5 && Levels.level == 1)
         {
             statusMinibos1 = 1;
             if(musuh == 3)
@@ -107,6 +114,18 @@ public class Indra extends Actor
             Level1.score.add(1);
             musuh += 1;
             //Greenfoot.addObject()
+            }
+        }
+        
+        //if(level1.score.getValue() >= 100 && Levels.level == 2)
+        if(Level1.score.getValue() >= 5 && Levels.level == 2)
+        {
+            statusMinibos1 = 1;
+            if(musuh == 2)
+            {
+                getWorld().addObject(new Mayadenawa(), 664, 522);
+                Level1.score.add(1);
+                musuh += 1;
             }
         }
         

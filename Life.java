@@ -19,8 +19,27 @@ public class Life extends Actor
         {
             if(isTouching(Indra.class))
             {
-                Greenfoot.setWorld(new Level2());
+                Level1.level1Sound.stop();
+                Greenfoot.setWorld(new Story2());
+                Indra.winLevel1 = 0;
+                Indra.statusMinibos1 = 0;
+                Indra.musuh = 0;
+                Levels.level += 1;
             }
         }
+        
+        if(Levels.level == 2 && Levels.win == 1)
+        {
+            if(isTouching(Indra.class))
+            {
+                Level2.level2Sound.stop();
+                Greenfoot.setWorld(new Story3());
+                Indra.winLevel2 = 0;
+                Indra.statusMinibos1 = 0;
+                Indra.musuh = 0;
+                Levels.level = 3;
+            } 
+        }
+       
     }    
 }
