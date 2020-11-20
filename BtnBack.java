@@ -15,5 +15,11 @@ public class BtnBack extends Buttons
     public void act() 
     {
         // Add your action code here.
+        if(Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("enter"))
+        {
+            // MenuScreen.menuSound.stop();
+            Greenfoot.setWorld(new MenuScreen());
+            Greenfoot.playSound("klik.wav");
+        }
     }    
 }

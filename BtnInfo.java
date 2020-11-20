@@ -1,20 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
-/**
- * Write a description of class BtnInfo here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class BtnInfo extends Buttons
 {
     /**
-     * Act - do whatever the BtnInfo wants to do. This method is called whenever
+     * Act - do whatever the BtnPlay wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
         // Add your action code here.
-        
+        if(Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("enter"))
+        {
+            // MenuScreen.menuSound.stop();
+            Greenfoot.setWorld(new InfoScreen());
+            Greenfoot.playSound("klik.wav");
+        }
     }    
 }
