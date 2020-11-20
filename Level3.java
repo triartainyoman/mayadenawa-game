@@ -14,6 +14,7 @@ public class Level3 extends Levels
      * 
      */
     static GreenfootSound level3Sound = new GreenfootSound("level2.wav");
+    static Counter life2 = new Counter ("Mayadenawa Life :  ");
     public Level3()
     {
         level3Sound.playLoop();
@@ -44,10 +45,16 @@ public class Level3 extends Levels
 
         FinalMayadenawa finalMayadenawa = new FinalMayadenawa();
         addObject(finalMayadenawa,678,470);
-        
-        Counter counter3 = new Counter("Mayadenawa Life :  ");
-        addObject(counter3,729,19);
-        counter3.setLocation(680,19);
-        counter3.setValue(25);
+
+        Counter life2 = new Counter("Mayadenawa Life :  ");
+        addObject(life2,729,19);
+        life2.setLocation(680,19);
+        life2.setValue(25);
+
+        ApiChimera apiChimera = new ApiChimera();
+        addObject(apiChimera,97,18);
+        HujanApi hujanApi = new HujanApi();
+        addObject(hujanApi,211,22);
+        removeObject(apiChimera);
     }
 }

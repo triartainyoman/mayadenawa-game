@@ -174,5 +174,13 @@ public class Indra extends Actor
            removeTouching(ApiMinibos.class);
            Level1.life.add(-1);
         }
+        
+        if(isTouching(HujanApi.class))
+        {
+           Greenfoot.playSound("kena.wav");            
+           removeTouching(HujanApi.class);
+           Level1.life.add(-1);
+           getWorld().addObject(new HujanApi(), 400, 0);
+        }
     }
 }
