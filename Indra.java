@@ -55,12 +55,12 @@ public class Indra extends Actor
     {
         if(Greenfoot.isKeyDown("right"))
         {
-            setLocation(getX()+2, getY());
+            setLocation(getX()+3, getY());
         }
         
         if(Greenfoot.isKeyDown("left"))
         {
-            setLocation(getX()-2, getY()); 
+            setLocation(getX()-3, getY()); 
         }
         
         if(Greenfoot.isKeyDown("space"))
@@ -105,11 +105,11 @@ public class Indra extends Actor
     
     public void checkScore()  
     {  
-        if(Level1.score.getValue() >= 5 && Levels.level == 1)
+        if(Level1.score.getValue() >= 25 && Levels.level == 1)
         {
             statusMinibos1 = 1;
             if(musuh == 3)
-            {
+            { 
             getWorld().addObject(new MiniBos(), 664, 522);
             Level1.score.add(1);
             musuh += 1;
@@ -118,7 +118,7 @@ public class Indra extends Actor
         }
         
         //if(level1.score.getValue() >= 100 && Levels.level == 2)
-        if(Level1.score.getValue() >= 5 && Levels.level == 2)
+        if(Level1.score.getValue() >= 100 && Levels.level == 2)
         {
             statusMinibos1 = 1;
             if(musuh == 2)

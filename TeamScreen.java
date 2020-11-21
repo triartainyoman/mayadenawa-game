@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CreditScreen extends Menus
+public class TeamScreen extends Menus
 {
 
     /**
@@ -14,10 +14,10 @@ public class CreditScreen extends Menus
      * 
      */
     
-    public CreditScreen()
+    public TeamScreen() 
     {
         prepare();
-    }
+    } 
 
     /**
      * Prepare the world for the start of the program.
@@ -25,7 +25,7 @@ public class CreditScreen extends Menus
      */
     private void prepare()
     {
-        Exit exit = new Exit();
-        addObject(exit,726,558);
+        NextSlide next = new NextSlide();
+        addObject(next,726,560);
     }
 }

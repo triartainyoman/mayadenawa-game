@@ -20,6 +20,7 @@ public class Level2 extends Levels
         if(Levels.level == 1)
         {
             Levels.level += 1;
+            Levels.win = 1;
         }
         level2Sound.playLoop(); 
         prepare();
@@ -37,8 +38,8 @@ public class Level2 extends Levels
         Level1.score.setValue(Level1.score.getValue());
         addObject(Level1.score,50,18);
 
-        //Level1.life.setValue(Level1.life.getValue());
-        Level1.life.setValue(5);
+        Level1.life.setValue(Level1.life.getValue());
+        //Level1.life.setValue(5);
         addObject(Level1.life,744,19);
 
         Chimera chimera = new Chimera();

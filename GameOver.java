@@ -29,6 +29,7 @@ public class GameOver extends Menus
         Level1.life.setValue(5);
         Indra.musuh = 0;
         Indra.statusMinibos1 = 0;
+        Indra.winLevel1 = 0;
     }
 
     /**

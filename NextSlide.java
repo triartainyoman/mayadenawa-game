@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BtnFinal here.
+ * Write a description of class Next here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BtnFinal extends Buttons
+public class NextSlide extends Buttons
 {
     /**
-     * Act - do whatever the BtnFinal wants to do. This method is called whenever
+     * Act - do whatever the Next wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
@@ -17,9 +17,8 @@ public class BtnFinal extends Buttons
         // Add your action code here.
         if(Greenfoot.mouseClicked(this))
         {
-            Greenfoot.playSound("klik.wav");
-            Greenfoot.setWorld(new Level3());
-            Levels.win = 2;
+            Greenfoot.playSound("klik.wav");            
+            Greenfoot.setWorld(new CreditScreen());
         }
     }    
 }

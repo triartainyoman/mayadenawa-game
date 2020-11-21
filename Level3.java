@@ -13,10 +13,14 @@ public class Level3 extends Levels
      * Constructor for objects of class Level3.
      * 
      */
-    static GreenfootSound level3Sound = new GreenfootSound("level2.wav");
+    static GreenfootSound level3Sound = new GreenfootSound("level3.wav");
     static Counter life2 = new Counter ("Mayadenawa Life :  ");
     public Level3()
     {
+        if(Levels.level == 1 || Levels.level == 2);
+        {
+            Levels.win = 2;
+        }
         level3Sound.playLoop();
         prepare();
     }
@@ -46,10 +50,11 @@ public class Level3 extends Levels
         FinalMayadenawa finalMayadenawa = new FinalMayadenawa();
         addObject(finalMayadenawa,678,470);
 
-        Counter life2 = new Counter("Mayadenawa Life :  ");
-        addObject(life2,729,19);
-        life2.setLocation(680,19);
+        //Counter life2 = new Counter("Mayadenawa Life :  ");
         life2.setValue(25);
+        addObject(life2,680,19);
+        //life2.setLocation(680,19);
+        //life2.setValue(25);
 
         ApiChimera apiChimera = new ApiChimera();
         addObject(apiChimera,97,18);
